@@ -917,7 +917,8 @@ footer ul li:last-child {
         top: 10px;
     }
 
-    #cart_items * {
+    #cart_items *,
+    #order_items * {
         border-width: 5px;
     }
 
