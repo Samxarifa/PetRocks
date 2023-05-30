@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="../css/rules.css">
 </head>
 <body>
-    <?php include('../../../code/xarifaNav.php')?>
     <h1 style='text-align: center; margin-top: 10px'>You have been logged out. Redirecting...</h1>
 </body>
 </html>

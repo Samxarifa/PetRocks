@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-:root {
-    --nav-text: white;
-    --nav-textLogo: white;
-    --nav-textHover: white;
-    --nav-bg: var(--blue);
-    --nav-bg2: var(--darkblue);
-}
 
 * {
     padding: 0;

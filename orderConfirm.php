@@ -27,7 +27,6 @@
 </head>
 
 <body>
-    <?php include('../../code/xarifaNav.php')?>
     <?php include('code/header.php')?>
     <?php include('code/nav.php')?>
     <main>

@@ -24,7 +24,6 @@
     <title>Pet Rocks</title>
 </head>
 <body>
-    <?php include('../../code/xarifaNav.php')?>
     <main>
         <a id='arrow' href="index.php"><i class="material-symbols-outlined">arrow_back</i></a>
         <div id='accountForm'>

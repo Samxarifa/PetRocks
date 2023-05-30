@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-:root {
-    --nav-text: white;
-    --nav-textLogo: white;
-    --nav-textHover: white;
-    --nav-bg: var(--blue);
-    --nav-bg2: var(--darkblue);
-}
 
 * {
     padding: 0;
@@ -899,7 +892,8 @@ footer ul li:last-child {
 
     }
 
-    #cart_items .item .item_price a,#order_items .item .item_price a {
+    #cart_items .item .item_price a,
+    #order_items .item .item_price a {
         width: 100%;
         height: 50px;
         position: absolute;
@@ -956,7 +950,7 @@ footer ul li:last-child {
     header a {
         margin-right: 20px;
     }
-    
+
     #petrocks-nav li {
         flex: 1;
     }
