@@ -70,10 +70,10 @@
                 echo        "</select>
                                 <input type='hidden' id='stockId' name='stockId' value='{$row['stockId']}'>
                                 </form>
-                            <a href='product.php?id={$row['stockId']}'>View</a>
+                            <a href='product.php?id={$row['stockId']}'><i class='material-symbols-outlined'>visibility</i></a>
                             <form action='code/deleteFromCart.php' method='post'>
                                 <input type='hidden' id='stockId' name='stockId' value='{$row['stockId']}'>
-                                <button>Delete</button>
+                                <button><i class='material-symbols-outlined'>delete</i></button>
                             </form>
                             </div>
                         </div>

@@ -445,6 +445,15 @@ footer ul li:last-child {
     position: relative;
 }
 
+#cart_items .item .item_options a,
+#cart_items .item .item_options button {
+    height: 35px;
+}
+
+#cart_items .item .item_options i {
+    margin-left: 0;
+}
+
 #order_items .item {
     height: 100px;
     max-width: 750px;
