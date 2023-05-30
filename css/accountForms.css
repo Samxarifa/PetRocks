@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --nav-text: white;
+    --nav-textLogo: white;
+    --nav-textHover: white;
+    --nav-bg: var(--blue);
+    --nav-bg2: var(--darkblue);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    --blue: #007cad;
+    --darkblue: #005272;
+    --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.25s ease;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+}
+
+h2 {
+    color: white;
+    margin-top: 10px;
+}
+
+
+
+#arrow,
+#register {
+    position: absolute;
+    top: 20px;
+    color: var(--blue);
+}
+
+#register {
+    right: 20px;
+}
+
+#arrow {
+    left: 20px;
+}
+
+#arrow:hover i,
+#register:hover i {
+    font-size: 30px;
+}
+
+#accountForm {
+    background: var(--blue);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+#accountForm p {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    color: white;
+}
+
+#failText {
+    background: red;
+    text-align: center;
+}
+
+#accountForm input,
+#accountForm select {
+    width: 250px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+
+}
+
+#accountForm input:focus,
+#accountForm select:focus {
+    outline: none;
+    box-shadow: var(--shadow);
+}
+
+option:hover {
+    background: yellow;
+}
+
+
+#accountForm button {
+    color: black;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    margin-left: auto;
+    font-weight: normal;
+}
+
+#accountForm button:hover {
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+i {
+    margin-left: 5px;
+}
+
+.div_section {
+    display: flex;
+}
+
+.div_input {
+    margin: 0 10px;
+}
+
+@media only screen and (max-width:1000px) {
+    main {
+        padding: 50px;
+    }
+
+    .div_section {
+        flex-direction: column;
+    }
+}
