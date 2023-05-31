@@ -1,15 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+    --blue: #007cad;
+    --darkblue: #005272;
+    --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    --bg: white;
+    --fg: #e5e5e5;
+    --text: black;
+}
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    --blue: #007cad;
-    --darkblue: #005272;
-    --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: all 0.25s ease;
+}
+
+
+body {
+    background: var(--bg);
 }
 
 
@@ -23,12 +34,12 @@ main {
 }
 
 h1 {
-    color: white;
+    color: var(--blue);
     font-size: 40px;
 }
 
 h2 {
-    color: white;
+    color: var(--text);
     margin-top: 10px;
 }
 
@@ -55,7 +66,7 @@ h2 {
 }
 
 #accountForm {
-    background: var(--blue);
+    background: var(--fg);
     padding: 50px;
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -64,7 +75,7 @@ h2 {
 #accountForm p {
     margin-top: 10px;
     margin-bottom: 2px;
-    color: white;
+    color: var(--text);
 }
 
 #failText {
@@ -78,7 +89,9 @@ h2 {
     padding: 10px;
     font-size: 20px;
     border-radius: 10px;
-    border: none;
+    border: solid 2px var(--blue);
+    background: var(--fg);
+    color: var(--text);
 
 }
 
@@ -94,13 +107,13 @@ option:hover {
 
 
 #accountForm button {
-    color: black;
+    color: white;
     padding: 10px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: var(--blue);
     border: none;
     border-radius: 10px;
     margin-left: auto;
@@ -132,4 +145,15 @@ i {
     .div_section {
         flex-direction: column;
     }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* --shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.75), 0 6px 20px 0 rgba(255, 255, 255, 0.1); */
+        --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+        --bg: #121212;
+        --fg: #2a2a2a;
+        --text: rgba(255, 255, 255, 0.87);
+    }
+
 }
