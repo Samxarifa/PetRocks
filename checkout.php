@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="viewport" content="minimum-scale=1"/> -->
     <title>Pet Rocks</title>
+    <script src="js/hammer.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/rules.css">
     <link rel="icon" href="img/icon.png">

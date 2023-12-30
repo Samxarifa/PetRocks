@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="viewport" content="minimum-scale=1"/> -->
     <title>Pet Rocks</title>
+    <script src="js/hammer.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/rules.css">
     <link rel="icon" href="img/icon.png">
@@ -49,10 +50,10 @@
                 }
 
                 echo "<div class='item'>
-                        <div class='item_image' style='background-image: url(\"img/Stock/{$row['imageURL']}\");'></div>
+                        <img class='item_image' src='img/Stock/{$row['imageURL']}' loading='lazy'/>
                         <div class='item_content'>
                             <div class='item_text'>
-                                <h1>{$row['name']}</h1>
+                                <p id='item_name'>{$row['name']}</p>
                                 <p>In Stock</p>
                                 <p>Unit Price: £{$row['price']}</p>
                                 <p>Quantity: {$row['quantity']}</p>
@@ -88,7 +89,7 @@
                 echo "<div class='item total'>
                     <div class='item_content'>
                         <div class='item_text'>
-                            <h1>Total:</h1>
+                            <p>Total:</p>
                         </div>
                     </div>
                     <div class='item_price'>
@@ -98,7 +99,7 @@
                 </div>";
 
             } else { #Shows "cart is empty" if it is
-                echo "<h1>Cart is Empty...</h1>";
+                echo "<h3 class='empty-cart'>Cart is Empty...</h3>";
             }
         ?>
         </section>

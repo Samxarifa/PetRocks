@@ -34,33 +34,33 @@
             <div class='div_section'>
                 <div class='div_input'>
                 <p>Forename</p>    
-                <input type="text" name="forename" id="forename"><br>
+                <input type="text" name="forename" id="forename" required><br>
                 </div><div class='div_input'>
                 <p>Surname</p>
-                <input type="text" name="surname" id="surname"><br>
+                <input type="text" name="surname" id="surname" required><br>
                 </div>
             </div>
             <h2>Address</h2>
             <div class='div_section'>        
                 <div class='div_input'>    
                 <p>Street</p>
-                <input type="text" name="street" id="street"><br>
+                <input type="text" name="street" id="street" required><br>
                 </div><div class='div_input'>
                 <p>Town</p>
-                <input type="text" name="town" id="town"><br>
+                <input type="text" name="town" id="town" required><br>
                 </div><div class='div_input'>
                 <p>Postcode</p>
-                <input type="text" name="postcode" id="postcode"><br>
+                <input type="text" name="postcode" id="postcode" required><br>
                 </div>
             </div>
             <h2>Account Details</h2>
             <div class='div_section'>
                 <div class='div_input'>    
                 <p>Email</p>
-                <input type="text" name="email" id="email"><br>
+                <input type="text" name="email" id="email" required><br>
                 </div><div class='div_input'>
                 <p>Username</p>
-                <input type="text" name="username" id="username"><br>
+                <input type="text" name="username" id="username" required><br>
                 </div><div class='div_input'>
                 <p>Member Type</p>
                 <select name='memberType' id='memberType'>
@@ -75,10 +75,10 @@
             <div class='div_section'>
                 <div class='div_input'>    
                 <p>Password</p>
-                <input type="password" name="password" id="password"><br>
+                <input type="password" name="password" id="password" required><br>
                 </div><div class='div_input'>
                 <p>Retype Password</p>
-                <input type="password" name="password2" id="password2"><br>
+                <input type="password" name="password2" id="password2" required><br>
                 </div><div class='div_input'>
                 </div>
             </div>

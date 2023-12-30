@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="viewport" content="minimum-scale=1"/> -->
     <title>Pet Rocks</title>
+    <script src="js/hammer.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/rules.css">
     <link rel="icon" href="img/icon.png">
@@ -23,20 +24,22 @@
     <?php include('code/nav.php')?>
     <main>
         <div class='div_backgroundImage' style="background-image: url('img/background.png');">
-            <div>
-                <h1>Pet Rocks</h1>
-                <h2>They are definitely not a scam...</h2>
+            <div class='div_foreground'>
+                <div class='content-container'>
+                    <h1>Pet Rocks</h1>
+                    <h2>They are definitely not a scam...</h2>
+                </div>
             </div>
         </div>
         <p class='quote'><q>Pet Rocks Rock, and together, we will change the future of Pet Rocks</q></p><p class='quote'>- Scott Bots (CEO)</p>
-        <h1 id='page_heading'>Top Selling Products In Stock</h1>
+        <h1 id='page_heading'>Our Top Sellers</h1>
         <section class='cards indexCards'>
             <?php
                 require_once('code/connect.php');
 
                 $db = connectToDB();
 
-                $sql = "SELECT eStock.stockId, name, price, imageURL, SUM(quantity) AS 'qtySold'
+                $sql = "SELECT eStock.stockId, name, price, imageURL
                         FROM eStock, eOrderStock
                         WHERE eStock.stockId = eOrderStock.stockId
                         AND qtyInStock > 0
@@ -54,38 +57,31 @@
                     $name = $row['name'];
                     $price = $row['price'];
                     $image = $row['imageURL'];
-                    $sales = $row['qtySold'];
                     
-                    echo "<div class='card'>
-                        <div class='card_image' style='background-image: url(\"img/Stock/$image\");'></div>
-                        <div class='card_content'>
-                            <h1>$name</h1>
-                            <div>
-                                <p>£$price</p>
-                                <p>Stock Sold: $sales</p>
-                            </div>
-                        </div>
-                        <div class='card_buttons'>
-                            <a href='product.php?id=$id'>View <i class='material-symbols-outlined'>visibility</i></a>
-                            <form action='code/addToCart.php' method='post'>
-                                <input hidden type='text' id='id' name='id' value=$id>
-                                <button type='submit'>Add to <i class='material-symbols-outlined'>shopping_cart</i></button>
-                            </form>
-                        </div>
-                        </div>";
-
+                    echo "<a href='product.php?id=$id' class='card-link'>
+                                <div class='card-div'>
+                                    <div class='card-OOS-text-div'><p>Out of Stock</p></div>
+                                    <img src='img/Stock/$image' loading='lazy'>
+                                    <div class='card-details'>
+                                        <p class='card-title'>$name</p>
+                                        <p>£$price</p>
+                                    </div>
+                                </div>
+                            </a>";
                 }
             
             
             ?>
             <a id='link_products' href="products.php"><i class='material-symbols-outlined'>arrow_forward</i></a>
         </section>
-        <div class='div_backgroundImage' style="background-image: url('img/rocks.jpg');"><div></div></div>
+        <div class='div_backgroundImage' style="background-image: url('img/rocks.jpg');"><div class='div_foreground'></div></div>
         <h1 id='page_heading'>About Us</h1>
         <section class='content'>
-            <p>Scott Bots: CEO</p>
-            <p>Alex Cooper: Chief Operating Officer</p>
-            <p>Scott Tizzle: Chief Creative Director</p>
+            <div class='content-container'>
+                <p>Scott Bots: CEO</p>
+                <p>Alex Cooper: Chief Operating Officer</p>
+                <p>Scott Tizzle: Chief Creative Director</p>
+            </div>
         </section>
     </main>
     <?php include('code/footer.php')?>

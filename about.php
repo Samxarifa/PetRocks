@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="viewport" content="minimum-scale=1"/> -->
     <title>Pet Rocks</title>
+    <script src="js/hammer.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/rules.css">
     <link rel="icon" href="img/icon.png">
@@ -24,9 +25,11 @@
     <main>
         <h1 id='page_heading'>About Us</h1>
         <section class='content'>
-            <p>Scott Bots: CEO</p>
-            <p>Alex Cooper: Chief Operating Officer</p>
-            <p>Scott Tizzle: Chief Creative Director</p>
+            <div class='content-container'> 
+                <p>Scott Bots: CEO</p>
+                <p>Alex Cooper: Chief Operating Officer</p>
+                <p>Scott Tizzle: Chief Creative Director</p>
+            </div>
         </section>
     </main>
     <?php include('code/footer.php')?>

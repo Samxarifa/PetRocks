@@ -1,6 +1,10 @@
 <?php
-    function fail() { #Returns to login page with fail warning
-        $_SESSION['loginFail'] = true;
+    function fail($failType) { #Returns to login page with fail warning
+        if ($failType == 0) {
+            $_SESSION['loginFail'] = "Incorrect Username or Password";
+        } else if ($failType == 1) {
+            $_SESSION['loginFail'] = "Account is Currently Suspended";
+        }
         header('location:../login.php');
     }
     
@@ -16,7 +20,7 @@
 
     $db = connectToDB();
 
-    $sql = "SELECT customerId, username, password FROM eCustomer WHERE BINARY username = :username"; #Gets username and hashed password from db
+    $sql = "SELECT customerId, username, password, isAdmin, isSuspended FROM eCustomer WHERE BINARY username = :username"; #Gets username and hashed password from db
 
     $query = $db->prepare($sql);
 
@@ -29,13 +33,18 @@
         $row = $query->fetch();
         
         if (password_verify($password,$row['password'])) { #Checks if password is valid against hashed password
-            $_SESSION['username'] = $row['username']; #Sets session var for login check
-            $_SESSION['id'] = $row['customerId']; #Sets session var for future db entries
-            header('location: ../index.php');
+            if ($row['isSuspended'] == 1) {
+                fail(1);
+            } else {
+                $_SESSION['username'] = $row['username']; #Sets session var for login check
+                $_SESSION['id'] = $row['customerId']; #Sets session var for future db entries
+                $_SESSION['isAdmin'] = $row['isAdmin'];
+                header('location: ../index.php');
+            }
         } else {
-            fail(); #If Password Fail
+            fail(0); #If Password Fail
         } 
     } else {
-        fail(); #If Username Fail
+        fail(0); #If Username Fail
     }
 ?>

@@ -15,7 +15,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <!-- <meta name="viewport" content="minimum-scale=1"/> -->
     <title>Pet Rocks</title>
-    <script src='js/script.js'></script>
+    <script src="js/hammer.js"></script>
+    <script src="js/script.js"></script>
     <link rel='stylesheet' href='css/rules.css'>
     <link rel="icon" href="img/icon.png">
     <link rel='stylesheet'
@@ -52,37 +53,23 @@
                     $price = $row['price'];
                     $qtyInStock = $row['qtyInStock'];
                     $image = $row['imageURL'];
-                    
-                    $stockText = 'Out of Stock';
-                    $stockColor = 'red';
-                    $cartButton = '';
-                    
 
-                    if ($qtyInStock > 0) { #If in stock, shows add to cart button
-                        $stockText = 'In Stock';
-                        $stockColor = 'white';
-            
-                        $cartButton = "<form action='code/addToCart.php' method='post'>
-                                            <input hidden type='text' id='id' name='id' value='$id'>
-                                            <button type='submit'>Add to <i class='material-symbols-outlined'>shopping_cart</i></button>
-                                        </form>";
+                    if ($qtyInStock == 0) {
+                        $stockClass = "card-OOS";
+                    } else {
+                        $stockClass = "";
                     }
-                    
-                    echo "<div class='card'>
-                        <div class='card_image' style='background-image: url(\"img/Stock/$image\");'></div>
-                        <div class='card_content'>
-                            <h1>$name</h1>
-                            <div>
-                                <p>£$price</p>
-                                <p style='color: $stockColor;'>$stockText</p>
-                            </div>
-                        </div>
-                        <div class='card_buttons'>
-                            <a href='product.php?id=$id'>View <i class='material-symbols-outlined'>visibility</i></a>
-                            $cartButton
-                        </div>
-                        </div>";
 
+                    echo "<a href='product.php?id=$id' class='card-link'>
+                                <div class='card-div $stockClass'>
+                                    <div class='card-OOS-text-div'><p>Out of Stock</p></div>
+                                    <img src='img/Stock/$image' loading='lazy'>
+                                    <div class='card-details'>
+                                        <p class='card-title'>$name</p>
+                                        <p>£$price</p>
+                                    </div>
+                                </div>
+                            </a>";
                 }
             
             

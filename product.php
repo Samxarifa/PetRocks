@@ -45,9 +45,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="viewport" content="minimum-scale=1"/> -->
     <title>Pet Rocks</title>
+    <script src="js/hammer.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/rules.css">
-    <link rel="stylesheet" href="css/product.css">
+    <!-- <link rel="stylesheet" href="css/product.css"> -->
     <link rel="icon" href="img/icon.png">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,200" />
@@ -56,7 +57,7 @@
 <body>
     <?php include('code/header.php')?>
     <?php include('code/nav.php')?>
-    <main>
+    <main class='main-product'>
         <?php
         echo "<div id='product_image' style='background-image: url(\"img/Stock/$imageURL\")';></div>
         <div id='product_content'>

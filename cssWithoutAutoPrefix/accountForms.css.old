@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
@@ -20,8 +13,7 @@
 * {
     padding: 0;
     margin: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     /* transition: all 0.25s ease; */
     
@@ -39,20 +31,11 @@ body {
 
 
 main {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     min-height: 100vh;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -92,8 +75,7 @@ h2 {
     background: var(--fg);
     padding: 5rem;
     border-radius: 10px;
-    -webkit-box-shadow: var(--shadow);
-            box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
 }
 
 #accountForm p {
@@ -122,8 +104,7 @@ h2 {
 #accountForm input:focus,
 #accountForm select:focus {
     outline: none;
-    -webkit-box-shadow: var(--shadow);
-            box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
 }
 
 option:hover {
@@ -135,15 +116,9 @@ option:hover {
     color: white;
     padding: 1rem;
     margin-top: 2rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     background-color: var(--blue);
     border: none;
     border-radius: 10px;
@@ -153,8 +128,7 @@ option:hover {
 
 #accountForm button:hover {
     cursor: pointer;
-    -webkit-box-shadow: var(--shadow);
-            box-shadow: var(--shadow);
+    box-shadow: var(--shadow);
 }
 
 i {
@@ -162,8 +136,6 @@ i {
 }
 
 .div_section {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 }
 
@@ -181,10 +153,7 @@ i {
     }
 
     .div_section {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        flex-direction: column;
     }
 }
 
@@ -197,19 +166,10 @@ i {
         border-radius: 0;
         padding: 1rem;
         width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         min-height: 100dvh;
     }
 }

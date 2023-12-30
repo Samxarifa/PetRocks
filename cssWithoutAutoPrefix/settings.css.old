@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+:root {
+    /* Sets 1rem = 10px */
+    font-size: 62.5%;
+
+    --blue: #007cad;
+    --darkblue: #005272;
+    --bg: white;
+    --fg: #e5e5e5;
+    --text: black;
+}
+
+body {
+    font-size: 1.6rem;
+    background: var(--bg);
+}
+
+/* DIALOG ------------------------------------------------------- */
+
+#dlg_feedback {
+    padding: 1rem 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: solid 2px var(--blue);
+    border-radius: 15px;
+    background: var(--fg);
+    color: var(--text);
+    box-shadow: 5px 5px black;
+    font-size: 3rem;
+}
+
+#dlg_feedback div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#dlg_feedback_close {
+    padding: 1rem 2rem;
+    background: var(--blue);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    width: fit-content;
+}
+
+/* HEADER ------------------------------------------------------- */
+
+header {
+    height: 10rem;
+    background: var(--bg);
+    border-bottom: solid var(--blue) 3px;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#btn_menu {
+    display: none;
+}
+
+header h1 {
+    margin: 5rem;
+    font-size: 5rem;
+    color: var(--blue);
+}
+
+/* SIDEBAR ------------------------------------------------------- */
+
+aside {
+    background: var(--fg);
+    width: 25rem;
+    position: fixed;
+    top: 10rem;
+    left: 0;
+    height: calc(100dvh - 10rem);
+    border-right: solid var(--darkblue) 3px;
+}
+
+aside ul {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 1rem;
+    list-style: none;
+}
+
+aside a {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 3rem 2rem;
+    color: var(--blue);
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+aside li:last-child {
+    margin-top: auto;
+}
+
+aside a:hover {
+    background: var(--darkblue);
+    color: white;
+}
+
+.nav-icon {
+    font-size: 3rem;
+}
+
+.nav-text {
+    margin-left: 4rem;
+    font-size: 2.5rem;
+}
+
+/* MAIN ------------------------------------------------------- */
+
+main {
+    /* margin-top: 10rem; */
+    margin-left: 25rem;
+    padding: 0 2rem;
+    color: var(--text);
+}
+
+#update_button {
+    position: fixed;
+    z-index: 10;
+    top: 2rem;
+    right: 2rem;
+    padding: 2rem 3rem;
+    background: var(--blue);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+#update_form, .deleteWrapper, #admin_wrapper {
+    max-width: 160rem;
+    margin: auto;
+    position: relative;
+    outline: none;
+}
+
+#update_form > div, #delete, #admin_wrapper > div {
+    padding-top: 12rem;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+section {
+    padding: 2rem;
+    background: var(--fg);
+    border-radius: 10px;
+    width: 90rem;
+}
+
+.form_items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+}
+
+/* FORM INPUTS ------------------------------------------------------- */
+
+.form_item {
+    display: flex;
+    align-items: center;
+}
+
+.previous {
+    font-size: 2rem;
+    width: 35rem;
+}
+
+.form_input{
+    position: relative;
+}
+
+input, select {
+    padding: 1rem 2rem;
+    outline: none;
+    font-size: 2rem;
+    border: solid 2px #999;
+    border-radius: 15px;
+    background: transparent;
+    color: var(--text);
+}
+
+label {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+    background: var(--fg);
+    color: #999;
+    cursor: text;
+}
+
+input:focus, select:focus {
+    border-color: var(--blue);
+}
+
+input:focus + label {
+    color: var(--blue);    
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: 0;
+}
+
+#input_email, #input_street {
+    width: 50rem;
+}
+
+option {
+    background-color: var(--fg);
+    color: var(--text);
+}
+
+/* DELETE PAGE ------------------------------------------------------- */
+
+#delete h3 {
+    color: red;
+}
+
+#delete p {
+    margin-bottom: 1rem;
+}
+
+#delete button {
+    padding: 1rem 2rem;
+    margin-left: 1rem;
+    background: transparent;
+    border: solid 2px #999;
+    border-radius: 15px;
+    font-size: 2rem;
+    color: red;
+}
+
+#delete button:hover {
+    border-color: red;
+}
+
+#delete input:focus {
+    border-color: red;
+}
+#delete input:focus + label {
+    color: red;
+}
+
+/* ADMIN PANEL EXPANDABLE LISTS ------------------------------------------------------- */
+
+.admin_list {
+    list-style: none;
+}
+
+.admin_list li {
+    border-top: solid 1px var(--blue);
+    border-bottom: solid 1px var(--blue);
+    padding: 0 1rem;
+}
+
+.admin_list li:first-child {
+    border-top: solid 2px var(--blue);
+}
+
+.admin_list li:last-child {
+    border-bottom: solid 2px var(--blue);
+}
+
+.list_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    cursor: pointer;
+}
+
+.h3-suspended {
+    color: red;
+}
+
+.list_arrow {
+    transform: rotate(90deg);
+    transition: transform 0.2s ease;
+}
+
+.list_arrow_inverted {
+    transform: rotate(-90deg);
+}
+
+.list_content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease;
+    position: relative;
+    display: flex;
+    gap: 5rem;
+}
+
+.list_content_shown {
+    height: 20rem;
+}
+
+.list_content .buttons {
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: end;
+}
+
+.list_content button {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: solid 2px var(--blue);
+    border-radius: 15px;
+    color: var(--text);
+    font-size: 1.6rem;
+    cursor: pointer;
+
+}
+
+.list_content button:hover {
+    border-color: var(--darkblue);
+}
+
+/* MEDIA QUERIES ------------------------------------------------------- */
+
+@media screen and (max-width:1200px) {
+    #btn_menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    aside {
+        transform: translateX(-100%);
+        z-index: 10;
+        transition: transform 0.2s ease;
+    }
+
+    .nav_focused {
+        transform: translateX(0%);
+    }
+
+    main {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    section {
+        width: 100%;
+    }
+
+    .form_item {
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    #delete button {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        font-size: 55%;
+    }
+
+    #dlg_feedback {
+        width: 100%;
+    }
+
+    #dlg_feedback_close {
+        padding: 2rem 3rem;
+    }
+    #logo {
+        display: none;
+    }
+    header h1 {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .form_item, .form_input, input {
+        width: 100% !important;
+    }
+
+    .list_content {
+        justify-content: center;
+    }
+
+    .list_content .buttons {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    :root {
+        font-size: 45%;
+    }
+
+    .list_content {
+        gap: 2rem;
+    }
+}
+
+/* DARK MODE ------------------------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --fg: #2a2a2a;
+        --text: rgba(255,255,255,0.87)
+    }
+
+    #btn_menu, .list_arrow {
+        filter: invert(1);
+    }
+}
+
+/* PREFERS NO MOTION ------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+  }

@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="viewport" content="minimum-scale=1"/> -->
     <title>Pet Rocks</title>
+    <script src="js/hammer.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/rules.css">
     <link rel="icon" href="img/icon.png">
@@ -46,8 +47,8 @@
                 echo "<div class='item'>
                         <div class='item_content'>
                             <div class='item_text'>
-                                <h1>Order Ref: {$row['orderId']}</h1>
-                                <h1>Date Ordered: {$row['orderDate']}</h1>
+                                <p>Order Ref: {$row['orderId']}</p>
+                                <p>Date Ordered: {$row['orderDate']}</p>
                             </div>
                             <div class='item_options'>
                             <form action='orderConfirm.php' method='post'>

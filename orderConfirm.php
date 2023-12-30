@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="viewport" content="minimum-scale=1"/> -->
     <title>Pet Rocks</title>
+    <script src="js/hammer.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/rules.css">
     <link rel="icon" href="img/icon.png">
@@ -68,8 +69,8 @@
                 echo "<div class='item'>
                         <div class='item_content'>
                             <div class='item_text'>
-                                <h1>Item: {$row['name']}</h1>
-                                <h1>Quantity: {$row['quantity']}</h1>
+                                <p>Item: {$row['name']}</p>
+                                <p>Quantity: {$row['quantity']}</p>
                             </div>
                         </div>
                         <div class='item_price'>
@@ -105,7 +106,7 @@
                 echo "<div class='item total'>
                     <div class='item_content'>
                         <div class='item_text'>
-                            <h1>Total:</h1>
+                            <p>Total:</p>
                         </div>
                     </div>
                     <div class='item_price'>

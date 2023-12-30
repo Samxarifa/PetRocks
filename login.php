@@ -3,7 +3,7 @@
     if (isset($_SESSION['username'])) { #Checks user is not logged in
         header('location: index.php');
     } else if (isset($_SESSION['loginFail'])) { #Checks for previous failed login attempt
-        $failText = 'Incorrect Username or Password';
+        $failText = $_SESSION['loginFail'];
         $_SESSION['loginFail'] = null;
     } else {
         $failText = '';
